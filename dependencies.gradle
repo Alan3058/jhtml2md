@@ -1,0 +1,9 @@
+ext.versions = [
+        jsoup: '1.9.2',
+        junit: '4.12'
+]
+
+ext.libs = [
+        jsoup: "org.jsoup:jsoup:${versions.jsoup}",
+        junit: "junit:junit:${versions.junit}"
+]

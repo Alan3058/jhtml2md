@@ -1,0 +1,32 @@
+group 'com.ctosb'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: "maven"
+apply from: 'dependencies.gradle'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile(libs.jsoup)
+    testCompile(libs.junit)
+}
+
+install {
+    repositories.mavenInstaller {
+        pom.groupId = project.group
+        pom.artifactId = project.name
+        pom.version = project.version
+    }
+}
+
+compileTestJava {
+    include {
+        "**/*.*"
+    }
+}

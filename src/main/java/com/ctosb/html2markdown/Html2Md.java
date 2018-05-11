@@ -82,7 +82,7 @@ public class Html2Md {
 					line.append(textNode.getWholeText());
 				} else {
 					// 非代码块
-					line.append(textNode.text().replaceAll("#", "/#").replaceAll("\\*", "/\\*"));
+					line.append(textNode.text().replaceAll("#", "\\\\#").replaceAll("\\*", "\\\\*"));
 				}
 			} else if (child instanceof Element) {
 				// 非静态文本
